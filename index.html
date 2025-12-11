@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviv Solan - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb; /* Royal Blue */
+            --primary-dark: #1e40af;
+            --secondary: #1e293b; /* Slate Dark */
+            --text: #334155; /* Slate Gray */
+            --text-light: #64748b;
+            --bg: #f1f5f9; /* Slightly darker for contrast */
+            --card-bg: #ffffff;
+            --accent: #0ea5e9; /* Light Blue */
+            --accent-light: #38bdf8;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--text);
+            line-height: 1.7;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 35px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header / Sidebar (Left on Desktop) */
+        aside {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0f172a 100%);
+            color: white;
+            padding: 40px 35px;
+            border-radius: 16px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.3s ease;
+        }
+
+        aside:hover {
+            transform: translateY(-2px);
+        }
+
+        aside h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: white;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        aside h2 {
+            font-size: 1.05rem;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            color: var(--accent-light);
+            line-height: 1.5;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 35px;
+            font-size: 0.9rem;
+        }
+
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-info div:hover {
+            transform: translateX(3px);
+        }
+
+        .contact-info i {
+            color: var(--accent-light);
+            width: 20px;
+            font-size: 1rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-light);
+            text-decoration: underline;
+        }
+
+        .skills-section h3 {
+            border-bottom: 2px solid rgba(255,255,255,0.25);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+            margin-top: 25px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        .skills-section h3:first-child {
+            margin-top: 0;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            margin-right: 6px;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .skill-tag:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-1px);
+        }
+
+        /* Main Content (Right) */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        section:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--secondary);
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        /* Education & Jobs Items */
+        .timeline-item {
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 2px solid var(--border);
+            transition: padding 0.2s ease;
+        }
+
+        .timeline-item:hover {
+            padding-left: 5px;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+            gap: 10px;
+        }
+
+        .header-row h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .header-row span {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            background: var(--bg);
+            padding: 4px 12px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .sub-header {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 12px;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+             /* Make projects side by side on larger screens if desired, currently sticking to list for detail */
+        }
+
+        .project-card {
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .project-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .project-card h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .project-card p {
+            margin-bottom: 12px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px 0;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 10px;
+            }
+            
+            aside {
+                position: relative;
+                top: 0;
+                padding: 30px 25px;
+            }
+
+            aside h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 25px 20px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-row span {
+                margin-top: 5px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            aside {
+                position: relative;
+                top: 0;
+            }
+
+            section {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <aside>
+        <h1>Aviv Solan</h1>
+        <h2>Physics & Math Undergrad<br>AI Researcher</h2>
+        
+        <div class="contact-info">
+            <div><i class="fas fa-map-marker-alt"></i> Israel | 🇺🇸 U.S. Citizen</div>
+            <div><i class="fas fa-phone"></i> +972-58-643-4769</div>
+            <div><i class="fas fa-envelope"></i> avivsolan@gmail.com</div>
+            <div><i class="fab fa-linkedin"></i> <a href="#" style="color:white; text-decoration:none;">LinkedIn Profile</a></div>
+            <div><i class="fab fa-github"></i> <a href="#" style="color:white; text-decoration:none;">GitHub Profile</a></div>
+        </div>
+
+        <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <div style="margin-bottom: 15px;">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Assembly</span>
+            </div>
+            
+            <h3>AI & Data</h3>
+            <div style="margin-bottom: 15px;">
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">XAI / SHAP</span>
+                <span class="skill-tag">OpenCV</span>
+            </div>
+
+            <h3>Math</h3>
+            <div>
+                <span class="skill-tag">Linear Algebra</span>
+                <span class="skill-tag">Quantum Mech</span>
+                <span class="skill-tag">Optimization</span>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        
+        <section>
+            <div class="section-title">Profile</div>
+            <p>
+                Ambitious Physics and Mathematics undergraduate with a strong foundation in Deep Learning and Computer Vision. Uniquely pursuing a B.Sc. concurrently with high school studies (60% completed with 88.5 GPA). Proven research track record as an EUCYS delegate and national award winner. Combining rigorous scientific training with hands-on system engineering.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-title">Education</div>
+            
+            <div class="timeline-item">
+                <div class="header-row">
+                    <h3>Open University of Israel</h3>
+                    <span>2024 – Present</span>
+                </div>
+                <span class="sub-header">B.Sc. Physics & Mathematics</span>
+                <ul>
+                    <li>Completed 75+ academic credits (~60% of degree) while in high school.</li>
+                    <li><strong>GPA:</strong> 88.5</li>
+                    <li><strong>Coursework:</strong> Linear Algebra, Data Structures, Quantum Mechanics, Probability.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="header-row">
+                    <h3>HaKfar HaYarok High School</h3>
+                    <span>Expected 2026</span>
+                </div>
+                <span class="sub-header">Excellence Program Member</span>
+                <ul>
+                    <li><strong>Majors:</strong> Physics (10 units), Computer Science (10 units).</li>
+                    <li>Active participant in national science competitions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Research & Projects</div>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4>XAI-Based Basketball Shot Analysis</h4>
+                    <span class="project-tech">Python, PyTorch, Computer Vision, Pose Estimation</span>
+                    <p>Independent research developing a novel XAI algorithm to optimize biomechanical movement.</p>
+                    <ul>
+                        <li>Built a pipeline to analyze shooting form using deep learning.</li>
+                        <li>Designed an Explainable AI system to provide interpretable feedback on release angle and wrist motion.</li>
+                        <li><strong>Awards:</strong> 3rd Place - National Contest for Young Scientists; EUCYS Delegate (Latvia).</li>
+                    </ul>
+                </div>
+
+                <div class="project-card">
+                    <h4>Nand2Tetris – Full Stack System</h4>
+                    <span class="project-tech">Hardware Sim, Assembly, Compiler Design</span>
+                    <p>Constructed a complete general-purpose computer system from the ground up.</p>
+                    <ul>
+                        <li>Designed hardware architecture starting from NAND logic gates.</li>
+                        <li>Implemented a custom Assembler converting symbolic Hack assembly to machine code.</li>
+                        <li>Developed a functional Operating System and compiler stack.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">Honors & Activities</div>
+            <ul>
+                <li><strong>Official Israeli Delegate:</strong> EUCYS (European Union Contest for Young Scientists), Latvia.</li>
+                <li><strong>3rd Place:</strong> National Contest for Young Scientists and Developers.</li>
+                <li><strong>Competitive Basketball (12 Years):</strong> Leveraged domain expertise for AI biomechanics research.</li>
+            </ul>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
