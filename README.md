@@ -9,12 +9,32 @@ A modern, responsive web-based resume showcasing my background in Physics, Mathe
 - **Print-Friendly**: Optimized for printing with proper page breaks
 - **Fast Loading**: Lightweight HTML/CSS with no external dependencies (except fonts and icons)
 
+## Project Structure
+
+```
+avivsolan_cv/
+├── index.html      # Main HTML file
+├── styles.css      # All CSS styles and animations
+├── script.js       # Interactive JavaScript features
+├── README.md       # Project documentation
+└── .gitignore     # Git ignore file
+```
+
 ## Technologies Used
 
 - HTML5
-- CSS3 (with CSS Variables and Grid/Flexbox)
+- CSS3 (with CSS Variables, Grid/Flexbox, and Animations)
+- JavaScript (ES6+)
 - Google Fonts (Inter)
 - Font Awesome Icons
+
+## Features
+
+- **Scroll Animations**: Sections fade in as you scroll
+- **Interactive Elements**: Hover effects on cards, skills, and timeline items
+- **Print Functionality**: Floating print button for easy PDF generation
+- **Smooth Transitions**: All interactions have smooth animations
+- **Performance Optimized**: Debounced scroll events and efficient animations
 
 ## View Online
 
