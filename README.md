@@ -20,6 +20,22 @@ A modern, responsive web-based resume showcasing my background in Physics, Mathe
 
 Simply open `index.html` in any modern web browser, or host it on GitHub Pages or any static hosting service.
 
+## Setup & Deployment
+
+### Local Development
+Open `index.html` directly in your web browser.
+
+### GitHub Pages Deployment
+
+1. Create a new repository on GitHub named `avivsolan_cv`
+2. Add the remote and push:
+   ```bash
+   git remote add origin https://github.com/YOUR_USERNAME/avivsolan_cv.git
+   git push -u origin main
+   ```
+3. Enable GitHub Pages in repository settings (Settings → Pages → Source: main branch)
+4. Your CV will be available at `https://YOUR_USERNAME.github.io/avivsolan_cv/`
+
 ## License
 
 Personal use only.
