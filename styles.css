@@ -294,6 +294,18 @@ section p {
     color: var(--text);
 }
 
+section a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+section a:hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary);
+}
+
 /* Project Cards */
 .project-grid {
     display: grid;
